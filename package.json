@@ -1,0 +1,51 @@
+{
+  "name": "prepml",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -k -n web,runner -c cyan,magenta \"vite\" \"node server/runner.mjs\"",
+    "dev:web": "vite",
+    "runner": "node server/runner.mjs",
+    "build": "tsc -b && vite build",
+    "preview": "concurrently -k -n web,runner \"vite preview\" \"node server/runner.mjs\"",
+    "typecheck": "tsc -b",
+    "validate": "tsx scripts/validate.ts"
+  },
+  "dependencies": {
+    "@monaco-editor/react": "^4.7.0",
+    "@xyflow/react": "^12.12.0",
+    "clsx": "^2.1.1",
+    "cmdk": "^1.1.1",
+    "framer-motion": "^13.5.0",
+    "fuse.js": "^7.5.0",
+    "katex": "^0.18.10",
+    "lucide-react": "^1.49.0",
+    "monaco-editor": "^0.57.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "react-markdown": "^10.1.0",
+    "react-resizable-panels": "^4.14.1",
+    "react-router-dom": "^7.18.4",
+    "recharts": "^3.10.1",
+    "rehype-katex": "^7.0.1",
+    "remark-gfm": "^4.0.1",
+    "remark-math": "^6.0.0",
+    "sql.js": "^1.14.2",
+    "zustand": "^5.0.15"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.20",
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/node": "^26.6.3",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@types/sql.js": "^1.4.11",
+    "@vitejs/plugin-react": "^4.7.0",
+    "concurrently": "^9.2.4",
+    "tailwindcss": "^4.3.3",
+    "tsx": "^4.23.15",
+    "typescript": "~5.9",
+    "vite": "^6.4.3"
+  }
+}
