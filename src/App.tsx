@@ -1,6 +1,7 @@
 import { Suspense, lazy } from 'react'
 import type { ReactNode } from 'react'
 import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom'
+import { Analytics } from '@vercel/analytics/react'
 import Layout from './components/Layout'
 
 const Dashboard = lazy(() => import('./pages/Dashboard'))
@@ -73,6 +74,7 @@ export default function App() {
           </Routes>
         </Keyed>
       </Layout>
+      <Analytics />
     </BrowserRouter>
   )
 }
